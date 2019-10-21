@@ -21,36 +21,26 @@ Learning and outcomes :-
 4.Solve basic task. 
 
 CODE :-
-int sensePin = 0;
-int led = 9;
-int brightness = 0;
-int fadeAmount = 0;
-
 void setup()
 {
- analogReference(DEFAULT);//isn't necessary
- pinMode(led,OUTPUT);
+  serial.begin(9600);
+  pinMode(13, OUTPUT);
 }
+
 void loop()
 {
- int val = analogRead(sensePin);
- if (val > 350)
- {
-   if(brightness != 255)
-   {
-     brightness = 0;
-     for(brightness = 0; brightness <= 255; brightness += 5)
-     {
-       analogWrite(led,brightness);
-       delay(50);
-     }
-     brightness = 255;
-     analogWrite(led,brightness);
-   }
- }
- else
- {
-   brightness = 0;
-   analogWrite(led,brightness);
- }
-}
+  int sensorPin=A0;
+  int sensorValue=analogRead(sensorPin);
+  serial.println(sensorValue);
+  delay(10);
+  if(sensorValue>0);
+  {
+  digitalWrite(13, HIGH);
+  delay(10); 
+  }
+  else
+  {
+  digitalWrite(13, LOW);
+  delay(1000); 
+  }
+  }
