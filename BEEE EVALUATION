@@ -1,1 +1,56 @@
+Theory :-
 
+Learning & Observation :-
+
+Problems and Troubleshooting:-
+I face problem of short wires get stuck into each other and which PC I use, in that arduino program can't uploading, and some confusion about for loop for speed. 
+For wires we make circuit arrange well, we copy the program and paste it to another PC and than uploaded it well, and for confusion about speed is delay but at last I solve it. 
+
+Precautions :-
+1.Wire are not so stuck into each other, confusion can't be Crete to connecting wires to arduino.
+2.wire to be correctly place as code. 
+3.wires are pushed well into pins
+4.Remember the positive and negative terminal of led and circuit. 
+5.Chech the led well, it is fuse or not.
+6.Check wire to be not curled. 
+
+Learning and outcomes :-
+1.I learn basic code well. 
+2 Understand circuit. 
+3.Go through basic precautions. 
+4.Solve basic task. 
+
+CODE :-
+int sensePin = 0;
+int led = 9;
+int brightness = 0;
+int fadeAmount = 0;
+
+void setup()
+{
+ analogReference(DEFAULT);//isn't necessary
+ pinMode(led,OUTPUT);
+}
+void loop()
+{
+ int val = analogRead(sensePin);
+ if (val > 350)
+ {
+   if(brightness != 255)
+   {
+     brightness = 0;
+     for(brightness = 0; brightness <= 255; brightness += 5)
+     {
+       analogWrite(led,brightness);
+       delay(50);
+     }
+     brightness = 255;
+     analogWrite(led,brightness);
+   }
+ }
+ else
+ {
+   brightness = 0;
+   analogWrite(led,brightness);
+ }
+}
