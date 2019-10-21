@@ -1,8 +1,8 @@
-Theory :-
+Theory :-Use arduino UNO for making a system that automatically lights on when the door is opened. By use coding lights turns on every it the door is opened. 
 
-Learning & Observation :-
+Learning and observations :-I learn to glow Led automatically when a door opens , learnt more interesting codes and concept of arduino,learn connection of circuit with arduino
 
-Problems and Troubleshooting:-
+Problems and Troubleshooting :-
 I face problem of short wires get stuck into each other and which PC I use, in that arduino program can't uploading, and some confusion about for loop for speed. 
 For wires we make circuit arrange well, we copy the program and paste it to another PC and than uploaded it well, and for confusion about speed is delay but at last I solve it. 
 
