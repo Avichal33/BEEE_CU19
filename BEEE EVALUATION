@@ -24,7 +24,7 @@ CODE :-
 void setup()
 {
   serial.begin(9600);
-  pinMode(13, OUTPUT);
+  pinMode(7, OUTPUT);
 }
 
 void loop()
@@ -35,12 +35,12 @@ void loop()
   delay(10);
   if(sensorValue>0);
   {
-  digitalWrite(13, HIGH);
+  digitalWrite(7, HIGH);
   delay(10); 
   }
   else
   {
-  digitalWrite(13, LOW);
+  digitalWrite(7, LOW);
   delay(1000); 
   }
   }
